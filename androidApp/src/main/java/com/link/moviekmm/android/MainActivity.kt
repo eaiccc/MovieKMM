@@ -17,6 +17,8 @@ import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.link.moviekmm.Greeting
+import com.link.moviekmm.MovieApiImpl
+import com.link.moviekmm.model.remote.ktor.response.MovieApi
 import kotlinx.coroutines.launch
 
 @Composable
@@ -71,8 +73,11 @@ class MainActivity : ComponentActivity() {
                     var text by remember { mutableStateOf("Loading")}
                     LaunchedEffect(true) {
                         scope.launch{
+                            var response = MovieApiImpl().fetchMovieFromApi()
                             text = try {
-                                Greeting().greeting()
+                                //Greeting().greeting()
+
+                                "page:"+ response.page.toString() +" totoal result:" + response.total_results
                             } catch (e: Exception) {
                                 e.localizedMessage ?: "error"
                             }

@@ -45,7 +45,8 @@ dependencies {
     implementation(Libraries.koinCore)
     implementation(Libraries.koinAndroid)
     implementation(Libraries.ktorCore)
-    implementation(Libraries.ktorSerialization)
+    implementation(Libraries.ktorJsonSerialization)
+    implementation(Libraries.ktorContentNego)
     implementation(Libraries.ktorAndroid)
 
     implementation(Libraries.Compose.ui)

@@ -27,7 +27,8 @@ kotlin {
         val commonMain by getting {
             dependencies {
                 implementation(Libraries.ktorCore)
-                implementation(Libraries.ktorSerialization)
+                implementation(Libraries.ktorJsonSerialization)
+                implementation(Libraries.ktorContentNego)
                 implementation(Libraries.Common.sqlDelight)
                 implementation(Libraries.Common.sqlDelightExtension)
                 implementation(Libraries.Common.kotlinxSerializationCore)
